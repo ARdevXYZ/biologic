@@ -1,21 +1,44 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.App-logo {
-  height: 40vmin;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+p {
+  line-height: normal;
+  margin: 1em auto;
+}
+::selection {
+  color: #FF0066;
+  background: #FFF;
+}
+.app {
+  animation: 12s gradient-change infinite;
+  -webkit-animation: 12s gradient-change infinite;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  text-align: center;
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.app-logo {
+  height: auto;
+  width: 50%;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header {
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,16 +46,61 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.text-container {
+  display: flex;
+  background: transparent;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.app-link {
+  color: #FF0066;
+  background: #FFF;
+  border: 2px solid #FFF;
+  display: inline !important;
+  border-radius: 40px;
+  margin: 0em;
+  margin: 0em auto;
+  padding: 0.1em 1.25em;
+  line-height: normal;
+  text-decoration: none;
+  font-family: sofia-pro-condensed, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  transition: 0.4s;
+  animation: background-change 3s infinite;
+  -webkit-animation: background-change 3s infinite;
+}
+.app-link:hover {
+  background: transparent;
+  border-color: #e7e7e7;
+  color: #e7e7e7;
+  cursor: pointer;
+  animation: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes background-change {
+  0% { background: #FFF; }
+  50% { background: #e7e7e7; }
+  100% { background: #FFF; }
+}
+@-webkit-keyframes background-change {
+  0% { background: #FFF; }
+  50% { background: #e7e7e7; }
+  100% { background: #FFF; }
+}
+@keyframes gradient-change {
+  0% { background: radial-gradient(#FF0000, #FF0000, #FF0022, #FF0022); }
+  25% { background: radial-gradient(#FF0022, #FF0000, #FF0000, #FF0022); }
+  50% { background: radial-gradient(#FF0022, #FF0022, #FF0000, #FF0000); }
+  75% { background: radial-gradient(#FF0000, #FF0022, #FF0022, #FF0000); }
+  100% { background: radial-gradient(#FF0000, #FF0000, #FF0022, #FF0022); }
+}
+@-webkit-keyframes gradient-change {
+  0% { background: radial-gradient(#FF0000, #FF0000, #FF0022, #FF0022); }
+  25% { background: radial-gradient(#FF0022, #FF0000, #FF0000, #FF0022); }
+  50% { background: radial-gradient(#FF0022, #FF0022, #FF0000, #FF0000); }
+  75% { background: radial-gradient(#FF0000, #FF0022, #FF0022, #FF0000); }
+  100% { background: radial-gradient(#FF0000, #FF0000, #FF0022, #FF0022); }
 }
